@@ -1,0 +1,10 @@
+<p>{{counter$ | async}}</p>
+<button type="button" class="btn btn-primary" (click)="increment()">+</button>
+<button type="button" class="btn btn-danger" (click)="decrement()">-</button>
+<button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
+
+<div *ngFor="let d of data">
+  <span>{{d.id}}</span>
+  <span>{{d.title}}</span>
+  <span>{{d.completed}}</span>
+</div>

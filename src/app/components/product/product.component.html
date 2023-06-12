@@ -1,0 +1,21 @@
+<button type="button" class="btn btn-primary" (click)="addProduct()">Add Product</button>
+<ng-container>
+  <table class="table" *ngIf="products$ | async as products">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="removeProduct(product.id)">Remove Product</button></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
